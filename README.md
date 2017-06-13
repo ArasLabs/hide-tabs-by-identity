@@ -10,12 +10,14 @@ This project and the following release notes have been migrated from the old Ara
 
 Release | Notes
 --------|--------
+[v2](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v2) | Updated document to handle deprecated methods
 [v1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v1) | Word Document with Method Code and Instructions
 
 #### Supported Aras Versions
 
 Project | Aras
 --------|------
+[v2](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v2) | 8.2.0, 9.0.1,9.1.0
 [v1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v1) | 8.2.0, 9.0.1,9.1.0
 
 ## Installation
@@ -25,11 +27,11 @@ Project | Aras
 
 ### Install Steps
 
-The following sample is used to remove the tabs for “Quality Planning Documents” and “Changes” on the form for the Part ItemType for all users except those that belong to the Quality Planning identity.   You are also able to disable the forms so they are visible to the user, but unable to be clicked on.  To achieve these results following these instructions:
+The following sample is used to remove the tabs for “Quality Planning Documents” and “Changes” on the form for the Part ItemType for all users except those that belong to the Quality Planning identity. You are also able to disable the forms so they are visible to the user, but unable to be clicked on. To achieve these results following these instructions:
 
 1. Log into Aras Innovator as an Admin.
 2. From the TOC select **Administration > Methods** and create a new Client Side Java Script Method. Name it as you please.
-3. Insert the code from the end of [the document](./Documentation/Aras%20Innovator-%20How%20to%20Remove%20or%20Disable%20Rel%20Grid%20Tabs.doc). (Note: The code currently removes the tab, the code to disable the tab is commented out)
+3. Insert the code from the end of [the document](./Documentation/Aras%20Innovator-%20How%20to%20Remove%20or%20Disable%20Rel%20Grid%20Tabs-v2.doc). (Note: The code currently removes the tab, the code to disable the tab is commented out)
 4. Save, Unlock, and Close the method.
 5. From the TOC select **Administration > Form** and edit the form of the ItemType you want to apply the method to (For the sample code written we use the Part Form).
 6. Select the “Form Event” tab and add a new Relationship.
