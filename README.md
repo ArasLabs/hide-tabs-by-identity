@@ -10,13 +10,13 @@ This project and the following release notes have been migrated from the old Ara
 
 Release | Notes
 --------|--------
-[v1](https://github.com/ArasLabs/search-filtered-item-browser/releases/tag/v1) | Initial Release
+[v1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v1) | Word Document with Method Code and Instructions
 
 #### Supported Aras Versions
 
 Project | Aras
 --------|------
-[v1](https://github.com/ArasLabs/search-filtered-item-browser/releases/tag/v1) | 9.2.0 SP3
+[v1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v1) | 8.2.0, 9.0.1,9.1.0
 
 ## Installation
 
