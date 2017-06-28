@@ -1,0 +1,133 @@
+﻿<AML>
+ <Item type="Method" id="D8C823AB38BC4DD3B111DB61FDBBED9B" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var tabbar;
+var desiredTabId;
+var inn = document.thisItem.getInnovator();
+
+//Function to hide tabs
+hideTabs = function() {
+
+    // check whether current user is a member of the target identity
+    // get user info
+    var userID = top.aras.getCurrentUserID();
+    var user = inn.getItemById("User", userID);
+    var userName = user.getProperty("keyed_name", "");
+
+    // get target identity
+    var targetIdent = inn.newItem("Identity", "get");
+    targetIdent.setProperty("keyed_name", "Administrators");
+    var memrel = targetIdent.createRelationship("Member", "get");
+    targetIdent = targetIdent.apply();
+
+    if (targetIdent.isError()) {
+        return targetIdent;
+    }
+
+    var isMember = memberCheck(targetIdent, userName, 0);
+
+    // if user is a member of target identity, return. otherwise, hide tabs
+    if (isMember == 1)
+        return;
+
+    // ALERT FOR TO MANY LEVELS IN MEMBERSHIP STRUCTURE
+    if (isMember == -1) {
+        alert('The membership structure for the "' + targetIdent.getProperty("keyed_name", "") + '" identity has exceeded 10 levels.  Please contact your Aras Innovator Administrator to resolve.');
+    }
+
+    //Check if relationship grid is loaded
+    if (!isTabbarReady()) {
+        setTimeout(hideTabs, 50);
+        return;
+    }
+
+    tabbar = parent.relationships.relTabbar;
+    desiredTabId = tabbar.GetTabId("Alternates");
+    tabbar.selectTab(desiredTabId);
+
+    //Check if desired tab is selected
+    if (!isTabSelected(desiredTabId)) {
+        setTimeout(hideTabs, 50);
+        return;
+    }
+
+    var bomTab = tabbar.GetTabId("BOM");
+    var mbomTab = tabbar.GetTabId("BOM Structure");
+    tabbar.SetTabVisible(bomTab, false);
+    tabbar.SetTabVisible(mbomTab, false);
+
+    parent.relationshipsControl.onloaded();
+};
+
+
+// Function to check if relationship grid is loaded
+var isTabbarReady = function() {
+    if (parent.relationships === undefined)
+        return false;
+
+    var isReady = Boolean(!parent.relationships ||
+        !parent.relationships.relTabbarReady ||
+        parent.relationships.relTabbar.GetTabOrder("|") !== "");
+    return isReady;
+};
+
+
+// Function to check if desired tab is selected
+var isTabSelected = function(palceholderTabId) {
+    return (tabbar.GetSelectedTab() === palceholderTabId);
+};
+
+// Function to check whether user belongs to an identity
+var memberCheck = function(identity, userName, levels) {
+    var isMember = 0;
+    var members = identity.getRelationships("Member");
+
+    if (!members.getItemCount() > 0)
+        return isMember;
+
+    for (var i = 0; i < members.getItemCount(); i++) {
+
+        if (isMember == 1)
+            return isMember;
+
+        if (isMember == -1)
+            return isMember;
+
+        var mem = members.getItemByIndex(i);
+        if (mem.getRelatedItem().getProperty("is_alias", "") == '0') {
+
+            var ident = inn.newItem("Identity", "get");
+            ident.setProperty("id", mem.getRelatedItem().getProperty("id", ""));
+            var memrel = ident.createRelationship("Member", "get");
+            ident = ident.apply();
+
+            if (ident.isError())
+                return ident;
+
+            levels++;
+
+            if (levels > 9) //if membership > 10 levels possible circular reference breaks out of code
+                return -1;
+
+            isMember = memberCheck(ident, userName, levels);
+
+        } else {
+
+            idenName = mem.getRelatedItem().getProperty("keyed_name", "");
+            if (idenName == userName) {
+                isMember = 1;
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+    return isMember;
+}
+
+//Call hideTabs function
+setTimeout(hideTabs, 50);]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>labs_HideTabsByIdentity</name>
+ </Item>
+</AML>
