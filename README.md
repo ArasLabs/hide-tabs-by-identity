@@ -8,6 +8,7 @@ The sample code in this project demonstrates how to hide tabs for members of a s
 
 Release | Notes
 --------|--------
+[v3.0.1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3.0.1) | Fix readme and screenshot for v3.
 [v3](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3) | Updated project with import package to support Aras 11 SP9
 [v2](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v2) | Updated document to handle deprecated methods
 [v1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v1) | Word Document with Method Code and Instructions
@@ -16,6 +17,7 @@ Release | Notes
 
 Project | Aras
 --------|------
+[v3.0.1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3.0.1) | 11 SP9
 [v3](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3) | 11 SP9
 [v2](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v2) | 8.2.0, 9.0.1,9.1.0
 [v1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v1) | 8.2.0, 9.0.1,9.1.0
@@ -62,7 +64,7 @@ The BOM and BOM Structure tabs will be visible because the current user is a mem
 
 The BOM and BOM Structure tabs will be hidden from the form. The first relationship tab that appears will be the 'Alternates' tab.
 
-![Hidden Tabs Example](./Screenshots/hidden_tabs_example.PNG)
+![Hidden Tabs Example](./Screenshots/hidden_tabs_example_non-admin.png)
 
 ## Contributing
 
