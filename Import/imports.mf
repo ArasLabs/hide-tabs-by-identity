@@ -1,0 +1,3 @@
+<imports>
+  <package name="aras.labs.HideTabsByIdentity" path="HideTabsByIdentity\Import" />
+</imports>
