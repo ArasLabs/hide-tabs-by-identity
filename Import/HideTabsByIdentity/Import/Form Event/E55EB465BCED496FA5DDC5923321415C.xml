@@ -1,0 +1,11 @@
+﻿<AML>
+  <Item type="Form Event" id="E55EB465BCED496FA5DDC5923321415C" action="add">
+    <form_event>onformpopulated</form_event>
+    <related_id>
+      <Item type="Method" action="get">
+        <name>labs_HideTabsByIdentity</name>
+      </Item>
+    </related_id>
+    <source_id keyed_name="Part" type="Form">CAF99D0A8E6E44E9A681C38015FACE91</source_id>
+  </Item>
+</AML>
