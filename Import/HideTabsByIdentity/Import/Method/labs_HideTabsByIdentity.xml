@@ -11,7 +11,7 @@ hideTabs = function() {
     var isMember = memberCheck("Administrators");
 
     // if user is a member of target identity, return. otherwise, hide tabs
-    if (isMember != -1)
+    if (isMember)
         return;
    
     //Check if relationship grid is loaded
@@ -56,7 +56,7 @@ var memberCheck = function(identity) {
 
     // getIdentitiyList returns the Identities to which the current users belongs (see programmers guide)
     // -1 indicates, that the current user is not a member of the target identity 
-    isMember = aras.getIdentityList().indexOf(targetIdentity.getID());
+    isMember = aras.getIdentityList().includes(targetIdentity.getID());
     
     return isMember;
 };
