@@ -2,12 +2,13 @@
 
 It may be necessary that only certain users or groups are able to view the multiple relationships to a single item.
 
-The sample code in this project demonstrates how to hide tabs for members of a specific identity. For a more general example, check out the [ArasLabs/hide-tabs](https://github.com/ArasLabs/hide-tabs) project or the ['Hide Relationship Tabs on Aras Forms' post](http://community.aras.com/hide-relationship-tabs-aras-forms/) on the [Aras Labs blog.](http://community.aras.com/category/aras-labs/)
+This project demonstrates a code-free approach to handle this use case by using the Configurable User Interface (CUI) data model. Previous versions of this project would hide the relationship tabs for only a single Form. The configuration changes made in this project now hide the relationship tabs from any Form of a given ItemType.
 
 ## History
 
 Release | Notes
 --------|--------
+[v5.0.0](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v5.0.0) | Updated to use CUI
 [v4.0.0](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v4.0.0) | Tested on 12.0, 12.0 SP1
 [v3.0.1](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3.0.1) | Fix readme and screenshot for Aras11SP12.
 [v3](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3) | Updated project with import package to support Aras 11 SP9
@@ -18,6 +19,7 @@ Release | Notes
 
 Project | Aras
 --------|------
+[v5.0.0](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v5.0.0) | 12.0 SP7
 [v4.0.0](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v4.0.0) | 12.0, 12.0 SP1
 [v3.0.1](https://github.com/ArasLabs/hide-tabs-by-identity) | 11 SP12
 [v3](https://github.com/ArasLabs/hide-tabs-by-identity/releases/tag/v3) | 11 SP9
@@ -44,14 +46,14 @@ Project | Aras
 4. Enter the package name in the TargetRelease field.
     * Optional: Enter a description in the Description field.
 5. Enter the path to your local `..\HideTabsByIdentity\Import\imports.mf` file in the Manifest File field.
-6. Select **aras.labs.HideTabsByIdentity** in the Available for Import field.
+6. Select **aras.labs.cui.HideTabsByIdentity** in the Available for Import field.
 7. Select Type = **Merge** and Mode = **Thorough Mode**.
 8. Click **Import** in the top left corner.
 9. Close the Aras Package Import tool.
 
 ## Usage
 
-The sample code in this project hides the BOM and BOM Structure tabs for any user who is not a member of the Administrators identity. 
+The configuration in this project hides the BOM and BOM Structure tabs for any user who is not a member of the Administrators identity. 
 
 1. Log in to Aras as a user in the Administrators identity - i.e. 'admin'.
 2. Select **Design > Parts** in the Table of Contents (TOC).
@@ -80,9 +82,9 @@ For more information on contributing to this project, another Aras Labs project,
 
 ## Credits
 
-Original code written by Aras Support.
-
 Documented and published by Eli Donahue for Aras Labs. @EliJDonahue
+
+Maintained by Christopher Gillis for Aras Labs. @cgillis-aras
 
 ## License
 
