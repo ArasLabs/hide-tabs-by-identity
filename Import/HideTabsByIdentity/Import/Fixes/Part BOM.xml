@@ -1,0 +1,6 @@
+﻿<AML>
+ <!-- Hides the Part BOM relationship -->
+ <Item type="RelationshipType" id="159C6D88795B4A86864420863466F728" action="edit">
+  <hide_in_all>1</hide_in_all>
+ </Item>
+</AML>

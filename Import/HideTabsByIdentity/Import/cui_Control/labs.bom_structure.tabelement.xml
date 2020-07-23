@@ -1,0 +1,9 @@
+﻿<AML>
+ <Item type="cui_Control" id="0C8336D11DA44513B59D327341780DB8" action="add">
+  <additional_data>{"relTypeId": "567E4149FBF74DACA0B0C4C9B1E79A3B"}</additional_data>
+  <control_type>TabElementControl</control_type>
+  <label xml:lang="en">BOM Structure</label>
+  <parent_control keyed_name="ItemView.RelationshipAccordionTabs" type="cui_Control">88D09A43049E4341A99E4DF63B81C236</parent_control>
+  <name>labs.bom_structure.tabelement</name>
+ </Item>
+</AML>

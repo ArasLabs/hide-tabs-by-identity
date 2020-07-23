@@ -1,0 +1,30 @@
+﻿<AML>
+ <Item type="cui_PresentConfigWinSection" id="92BF027573FD45AFA42808F92E6CEF88" action="add">
+  <related_id keyed_name="labs.part.itemview" type="cui_WindowSection">
+   <Item type="cui_WindowSection" id="3C8719D33E924E6590B294AE16B0A474" action="add">
+    <classification>Data Model</classification>
+    <location keyed_name="ItemView" type="cui_Location">C18BD6E10E024EC786799C510D586143</location>
+    <name>labs.part.itemview</name>
+    <Relationships>
+     <Item type="cui_WindowSectionControl" id="E3B1BD6D10E245F288411F9F220695DB" action="add">
+      <action>Add</action>
+      <related_id keyed_name="labs.part_bom.tabelement" type="cui_Control">D079821605574887BE4777290E162455</related_id>
+      <role keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</role>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="labs.part.itemview" type="cui_WindowSection">3C8719D33E924E6590B294AE16B0A474</source_id>
+     </Item>
+     <Item type="cui_WindowSectionControl" id="931C691F005145EF899729C691D35879" action="add">
+      <action>Add</action>
+      <related_id keyed_name="labs.bom_structure.tabelement" type="cui_Control">0C8336D11DA44513B59D327341780DB8</related_id>
+      <role keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</role>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="labs.part.itemview" type="cui_WindowSection">3C8719D33E924E6590B294AE16B0A474</source_id>
+     </Item>
+    </Relationships>
+   </Item>
+  </related_id>
+  <role keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</role>
+  <sort_order>128</sort_order>
+  <source_id keyed_name="F2BAFC3F368B4EDE968406BFDB6597AC" type="PresentationConfiguration">F2BAFC3F368B4EDE968406BFDB6597AC</source_id>
+ </Item>
+</AML>

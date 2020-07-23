@@ -1,0 +1,6 @@
+﻿<AML>
+ <!-- Hides the BOM Structure relationship -->
+ <Item type="RelationshipType" id="567E4149FBF74DACA0B0C4C9B1E79A3B" action="edit">
+  <hide_in_all>1</hide_in_all>
+ </Item>
+</AML>
